@@ -4,11 +4,9 @@
     "description": "Learning Management System",
     "main": "server.js",
     "scripts": {
-      "start": "node server/server.js",
-      "server": "nodemon server/server.js",
-      "client": "npm start --prefix client",
-      "dev": "concurrently \"npm run server\" \"npm run client\"",
-      "build": "npm install && npm install --prefix client && npm run build --prefix client"
+    "dev": "npm install && concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "cd client && npm i && npm run dev",
+    "dev:backend": "cd server && npm i && npm run dev"
     },
     "keywords": [
       "mern",
@@ -17,7 +15,10 @@
     ],
     "author": "Your Name",
     "license": "MIT",
+    "devDependencies": {
+      "concurrently": "^9.1.2"
+    },
     "dependencies": {
-      "concurrently": "^8.2.2"
+      "react-hot-toast": "^2.5.2"
     }
   }
